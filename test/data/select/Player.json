@@ -1,0 +1,58 @@
+[
+	{
+		"playerID": 10001,
+		"level": 101,
+		"name": "知易行难",
+		"cards": [
+			{
+				"cardLevel": 1,
+				"cardExp": 100
+			},
+			{
+				"cardLevel": 2,
+				"cardExp": 110
+			}
+		]
+	},
+	{
+		"playerID": 10011,
+		"level": 90,
+		"name": "知易行难_modify",
+		"cards": [
+			{
+				"cardLevel": 3,
+				"cardExp": 210
+			}
+		]
+	},
+	{
+		"playerID": 10021,
+		"level": 90,
+		"name": "知易行难2",
+		"cards": [
+			{
+				"cardLevel": 1,
+				"cardExp": 100
+			},
+			{
+				"cardLevel": 2,
+				"cardExp": 110
+			}
+		]
+	},
+	{
+		"playerID": 10031,
+		"level": 90,
+		"name": "知易行难5",
+		"cards": [
+			{
+				"cardLevel": 1,
+				"cardExp": 100
+			},
+			{
+				"cardLevel": 2,
+				"cardExp": 110
+			}
+		]
+	}
+]
