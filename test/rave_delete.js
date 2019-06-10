@@ -33,7 +33,19 @@ describe("rave_delete", ()=> {
 		await r.close()
 	})
 
+	it("delete_all", async () => {	
+		const {Rave} =  require("../lib/rave")
+		const r = new Rave()		
+		await r.init({dbroot: "temp/select", syncInterval: 200})
+
+		await r.deleteAll("Player")
+		let keys = await r.selectAllKeys("Player")
+		keys.length.should.equal(0)
+
+		await r.close()
+	})
+
 	it("clean", async () => {
-		//shutil.rd("temp")
+		shutil.rd("temp")
 	})
 })

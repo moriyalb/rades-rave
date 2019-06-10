@@ -32,7 +32,7 @@ describe("rave_select", ()=> {
 		let playersById = await r.select("Player", [10011])		
 		playersById.length.should.equal(5)
 
-		playersById = await r.select("Player", [10011, 2001])		
+		playersById = await r.select("Player", ["10011", 2001])		
 		playersById.length.should.equal(3)
 
 		playersById = await r.select("Player", [10011, 2001, 1001])		
@@ -47,6 +47,38 @@ describe("rave_select", ()=> {
 		await r.select("Player", [10011, 2001, 1001, 1, 0]).should.rejected()		
 				
 		await r.close()
+	})
+
+	it("select_all_keys", async () => {
+		const {Rave} =  require("../lib/rave")
+		const r = new Rave()		
+		await r.init({dbroot: "temp/select", syncInterval: 200})
+
+		let keys = await r.selectAllKeys("Player")
+		
+		keys.should.deepEqual([10001, 10011, 10021, 10031])		
+
+		await r.close()		
+	})
+
+	it("select_all_keys_multi", async () => {
+		const {Rave} =  require("../lib/rave")
+		const r = new Rave()		
+		await r.init({dbroot: "temp/select_union", syncInterval: 200})
+
+		let keys = await r.selectAllKeys("Player")
+		keys.should.deepEqual([10011, 10012])		
+		
+		keys = await r.selectAllKeys("Player", [10011])
+		keys.should.deepEqual([2001, 2002])
+
+		keys = await r.selectAllKeys("Player", [10011, 2001])
+		keys.should.deepEqual([1001, 1002])
+
+		keys = await r.selectAllKeys("Player", [10011, 2001, 1001])
+		keys.should.deepEqual([1, 2])
+
+		await r.close()		
 	})
 
 	it("clean", async () => {

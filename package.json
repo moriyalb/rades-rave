@@ -33,6 +33,6 @@
   },
   "dependencies": {
     "ramda": "^0.26.1",
-    "shutil.js": "^0.2.0"
+    "shutil.js": "^0.3.0"
   }
 }

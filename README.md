@@ -58,3 +58,4 @@ async () => {
 * `rades-rave` is just use for quickly server development. Sometimes you don't really want to concern about the database detail.
 * `rades-rave` is worked well with `rades` solution. [Learn More](https://github.com/moriyalb/rades)
 * `rades-rave` don't support really `sql` features, it's just a very very lightweight, simply simulation.
+* `rades-rave` is not a stand-alone service. No network, no configure, just require it and use. 
